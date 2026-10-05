@@ -17,6 +17,8 @@ public:
 	bool Update();
 	//victory toggle
 	bool victory = false;
+	//defeat toggle
+	bool defeat = false;
 	void Render() const;
 	void Reset();
 	void ResetBall();

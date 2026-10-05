@@ -41,6 +41,8 @@ void Game::Reset()
 
 	brick.x_position = 48;
 	bricks.push_back(brick);
+
+	defeat = false;
 }
 
 void Game::ResetBall()
@@ -94,6 +96,11 @@ void Game::Render() const
 		std::cout << "You win!!";
 	}
 
+	if (defeat)
+	{
+		std::cout << "You lose. Press R to try again.";
+	}
+
 	Console::Lock(false);
 }
 
@@ -131,4 +138,10 @@ void Game::CheckCollision()
 	}
 
 	// TODO #7 - If ball touches bottom of window, pause ball and display (render) defeat text with R to reset
+
+	if (ball.y_position >= WINDOW_HEIGHT - 1)
+	{
+		ball.moving = false;
+		defeat = true;
+	}
 }
