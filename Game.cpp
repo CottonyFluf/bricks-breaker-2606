@@ -100,6 +100,11 @@ void Game::CheckCollision()
 		brick.color = ConsoleColor(brick.color - 1);
 		ball.y_velocity *= -1;
 
+		if (brick.color == ConsoleColor::Black)
+		{
+			//remove brick from variable
+		}
+
 		// TODO #5 - If the ball hits the same brick 3 times (color == black), remove it from the vector
 
 	}
