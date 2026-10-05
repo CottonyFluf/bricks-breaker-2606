@@ -15,6 +15,8 @@ class Game
 public:
 	Game();
 	bool Update();
+	//victory toggle
+	bool victory = false;
 	void Render() const;
 	void Reset();
 	void ResetBall();
